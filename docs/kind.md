@@ -52,7 +52,7 @@ image locally (e.g. by running `make` from the root of the repository).
 
 ```bash
 # "fix" the host's veth interfaces (for the different Kind Nodes)
-kind get nodes | xargs ./hack/kind-fix-networking.sh
+kind get nodes --no-headers=true | xargs ./hack/kind-fix-networking.sh
 # load the Antrea Docker image in the Nodes
 kind load docker-image antrea/antrea-ubuntu:latest
 # deploy Antrea
